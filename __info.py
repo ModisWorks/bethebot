@@ -6,7 +6,7 @@ CONTRIBUTORS = {
 BLURB = "Modis can't really have conversations with your server members, but you can fake it by taking control!"
 
 COMMANDS = {}
-DATA_SERVER = {}
+DATA_GUILD = {}
 DATA_GLOBAL = {}
 
 HELP_DATAPACKS = {}

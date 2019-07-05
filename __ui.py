@@ -76,20 +76,14 @@ def send_message(channel_id, message):
         message (str): The message to send to the channel
     """
 
-    channel = main.client.get_channel(channel_id)
+    channel = main.client.get_channel(int(channel_id))
 
     if channel is None:
         logger.info("{} is not a channel".format(channel_id))
         return
 
-    # Check that it's enabled in the server
-    # TODO port to new activation
-    # data = data.get_data()
-    # if not data["discord"]["servers"][channel.server.id][modulename]["activated"]:
-    #     logger.info("This module has been disabled in {} ({})".format(channel.server.name, channel.server.id))
-
     try:
-        runcoro(main.client.send_message(channel, message))
+        runcoro(channel.send(message))
     except Exception as e:
         logger.exception(e)
 
